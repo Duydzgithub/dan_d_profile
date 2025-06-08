@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Đặng Đức Duy</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <div class="gradient-bg">
+      <div class="gradient-bg-overlay"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="container">
+        <h2>About Me</h2>
+        <p>Xin chào cả nhà! Mình là Đặng Đức Duy, biệt danh DAN_D – một coder trẻ, nhiệt huyết, và hơi bị "mê" công nghệ đến mức ăn code, ngủ cũng mơ thấy dấu chấm phẩy! 😜 Hành trình lập trình của mình bắt đầu từ năm lớp 9, khi mình "bén duyên" với Python – tình đầu của mọi coder. Từ đó, mình lấn sân sang cả lập trình nhúng, AI, và điện tử, như một siêu anh hùng công nghệ nhảy múa giữa các lĩnh vực!
+
+Lập trình với mình không chỉ là gõ code giải bài toán, mà còn là sân chơi để mình tung hoành sáng tạo, biến những ý tưởng "điên rồ" thành hiện thực. Từ các dự án nho nhỏ kiểu "tự học tự sướng" cho đến những nghiên cứu khoa học hoành tráng, mình đều lao vào với 200% năng lượng. Yêu thích nhất? Đó là kết hợp công nghệ với vibe khởi nghiệp – biến những giấc mơ "to bự" thành sản phẩm cụ thể, từ hệ thống thu gom rác thông minh WasterClean AI (nghe xịn chưa?), đến hệ thống cảnh báo siêu ngầu, hay các mô hình STEM từng làm mưa làm gió ở trường học.
+
+Mỗi dòng code mình viết là một mảnh ghép nhỏ xây nên tương lai mà mình mơ ước – nơi công nghệ không chỉ "cool" mà còn giúp cuộc sống xanh hơn, tiện hơn, và bớt drama hơn! 😎 Mình luôn sẵn sàng kết nối, học hỏi, và "quậy" cùng mọi người để tạo ra những thứ khác biệt, đậm chất DAN_D. Ai muốn cùng mình viết tiếp câu chuyện công nghệ này, giơ tay nào! 🚀</p>
+<div class="about-gallery" style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+  <img src="images_public/aboutme/1.JPG" alt="Ảnh cá nhân 1" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/2.JPG" alt="Ảnh cá nhân 2" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/3.JPG" alt="Ảnh cá nhân 3" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/4.JPG" alt="Ảnh cá nhân 4" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/5.JPG" alt="Ảnh cá nhân 5" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/6.JPG" alt="Ảnh cá nhân 6" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+  <img src="images_public/aboutme/7.JPG" alt="Ảnh cá nhân 7" style="width:180px;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 2px 12px #0001;cursor:pointer;">
+</div>
+    </div>    
+</section>
+<div id="img-lightbox" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+    <img id="img-lightbox-img" src="" alt="Xem ảnh lớn" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #000a;">
+</div>
+    <script src="../src/main.js"></script>
+<script>
+document.body.addEventListener('click', function(e) {
+    if (e.target.matches('.about-gallery img')) {
+        const lightbox = document.getElementById('img-lightbox');
+        const lightboxImg = document.getElementById('img-lightbox-img');
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = e.target.src;
+            lightbox.style.display = 'flex';
+        }
+    }
+    if (e.target.id === 'img-lightbox') {
+        e.target.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>

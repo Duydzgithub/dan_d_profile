@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 6 - Đặng Đức Duy</title>
+    <link rel="stylesheet" href="style_project.css">
+</head>
+<body>
+    <div class="gradient-bg">
+      <div class="gradient-bg-overlay"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <section class="container">
+        <h2>Game chém hoa quả qua nhận diện tay.</h2>
+        <p>Nhận diện các ngón tay, qua đó thành cách lưỡi dao, chém qua nhưng loại quả khác nhau của game.</p>
+        <ul>
+            <li><strong>Công nghệ:</strong> Python,</li>
+            <li><strong>Vai trò:</strong> Developer</li>
+            <li><strong>Kết quả:</strong> Thử nghiệm dự án cá nhân <strong><a href="https://github.com/Duydzgithub">GitHub</a></strong></li>
+        </ul>
+        <!-- Ảnh minh họa -->
+        <h3>Ảnh minh họa</h3>
+        <div class="project-media" id="project-images"></div>
+        <p class="media-caption">Một số hình ảnh tiêu biểu của dự án.</p>
+        <button id="show-more-images" class="button" style="display:none;margin-top:10px;">Xem thêm ảnh</button>
+        <script>
+            window.projectImages = [
+                { src: "images_projects/game_chem_hoa_qua/1.png", caption: "Ảnh tổng quan dự án" },
+                { src: "images_projects/game_chem_hoa_qua/code.png", caption: "Ảnh tổng quan dự án" },
+                { src: "images_projects/game_chem_hoa_qua/begin.png", caption: "Ảnh tổng quan dự án",},
+                
+                
+            ];
+        </script>
+
+        <!-- Video minh họa -->
+        <h3 style="margin-top:24px;">Video minh họa</h3>
+        <div class="project-media" id="project-videos"></div>
+        <p class="media-caption">Video trình diễn tính năng, demo sản phẩm.</p>
+        <button id="show-more-videos" class="button" style="display:none;margin-top:10px;">Xem thêm video</button>
+        <script>
+            window.projectVideos = [
+                { url: "https://youtube.com/shorts/mNUSl8uH5Lk", caption: "Demo tính năng chính",  unmuted: true },
+                
+            ];
+        </script>
+
+        <a href="../projects.html" class="button">Quay lại trang Projects</a>
+    </section>
+    <div id="img-lightbox" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+        <img id="img-lightbox-img" src="" alt="Xem ảnh lớn" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #000a;">
+    </div>
+    <script src="main_project.js"></script>
+</body>
+</html>

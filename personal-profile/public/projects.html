@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Đặng Đức Duy</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <div class="gradient-bg">
+      <div class="gradient-bg-overlay"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="container">
+        <h2>Projects</h2>
+        <div class="projects-list">
+           
+        </div>
+    </section>
+    <div id="img-lightbox" style="display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+    <img id="img-lightbox-img" src="" alt="Xem ảnh lớn" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #000a;">
+</div>
+    <script src="../src/main.js"></script>
+    <script>
+const projects = [
+  {
+    title: "Waster cleanAI(NCKH)",
+    desc: "Nghiên cứu khoa học lớp 11(2022-2023) Waster cleanAI",
+    img: "project/images_projects/wasterclean_ai/project1.png",
+    link: "project/project1.html"
+  },
+  {
+    title: "AI_TraficBot (NCKH-lớp 12)",
+    desc: "GIÁM SÁT VÀ PHÁT HIỆN HÀNH VI VI PHẠM AN TOÀN GIAO THÔNG BẰNG HỆ THỐNG ROBOT THÔNG MINH AI.",
+    img: "project/images_projects/AI_TrafficBot/get_data.png",
+    link: "project/project2.html"
+  },
+  {
+    title: "Project 3",
+    desc: "Mô tả ngắn về dự án 3.",
+    img: "https://via.placeholder.com/300x160?text=Project+3",
+    link: "project/project3.html"
+  },
+  {
+    title: "Esp8266 websever",
+    desc: "Điều khiển led realtime qua websever esp8266.(2024)",
+    img: "project/images_projects/led_websever_esp8266.png",
+    link: "project/project4.html"
+  },{
+    title: "AI nhận diện bàn tay(lớp 9-2022)",
+    desc: "Nhận diện các ngón tay rồi hiển thị len màn hình số ngón tay tương ứng",
+    img: "project/images_projects/hand_detection_lop9.png",
+    link: "project/project5.html"
+  }
+  ,
+  
+  {
+    title: "Điều khiển leds qua nhận diện ngón tay(lớp 11-2024)",
+    desc: "Nhận diện ngón tay và điều khiển leds theo ngón tay.",
+    img: "project/images_projects/leds_hand_deetection_2.png",
+    link: "project/project6.html"
+  },
+  {
+    title: "SMART TRASH CAN (LỚP 12)",
+    desc: "Tự động đóng mở thùng rác thông minh.",
+    img: "project/images_projects/smart_trashcan/image.png",
+    link: "project/project7.html"
+  },
+  {
+    title: "Game chém hoa quả qua nhận diện bàn tay.(lớp 12)",
+    desc: "Nhận diện bàn tay và chém hoa quả.",
+    img: "project/images_projects/game_chem_hoa_qua/1.png",
+    link: "project/project8.html"
+  },
+  {
+    title: "Mạch báo cháy(lớp 12)",
+    desc: "Cảm biến khói độc và khí nguy hiểm qua cảm biến khí, rồi mạch xử lý dữ liệu để đưa ra cảnh báo cho mọi người.",
+    img: "project/images_projects/mach_bao_chay/test.png",
+    link: "project/project9.html"
+  },
+  {
+    title: "Mạch điện(Lớp 12)",
+    desc: "mạch phát hiện dòng điện trong dây dẫn qua cảm ứng từ.",
+    img: "project/images_projects/phat_hien_dong_dien/avt.png",
+    link: "project/project10.html"
+  },{
+    title: "Điện Tử (Lớp 10)",
+    desc: "Điều khiển độ sáng và chế độ màu của led RGB qua websever",
+    img: "project/images_projects/rgb_websever/1.png",
+    link: "project/project11.html"
+  },{
+    title: "Rau thủy canh với năng lượng đèn led (Lớp 11)",
+    desc: "Thiết kế thử nghiệm hệ thống nuôi trồng rau thủy canh, sử dụng năng lượng ánh sáng từ đèn led.",
+    img: "project/images_projects/rau_thuy_canh/avt.png",
+    link: "project/project12.html"
+  },
+];
+
+const list = document.querySelector('.projects-list');
+list.innerHTML = projects.map(p => `
+  <div class="project-card">
+    <img src="${p.img}" alt="${p.title}" style="width:100%;border-radius:8px 8px 0 0;">
+    <h3>${p.title}</h3>
+    <p>${p.desc}</p>
+    <a href="${p.link}">Xem chi tiết</a>
+  </div>
+`).join('');
+
+document.body.addEventListener('click', function(e) {
+    if (e.target.matches('.project-card img')) {
+        const lightbox = document.getElementById('img-lightbox');
+        const lightboxImg = document.getElementById('img-lightbox-img');
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = e.target.src;
+            lightbox.style.display = 'flex';
+        }
+    }
+    // Đóng lightbox khi click nền tối
+    if (e.target.id === 'img-lightbox') {
+        e.target.style.display = 'none';
+    }
+});
+</script>
+</body>
+</html>

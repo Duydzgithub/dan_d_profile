@@ -1,0 +1,326 @@
+/* Container cho trang project */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    backdrop-filter: blur(2px);
+}
+
+/* Tiêu đề và mô tả */
+h2 {
+    color: #ff5e62;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 20px;
+    color: #444;
+}
+
+li strong {
+    color: #ffb347;
+}
+
+/* Media minh họa */
+.project-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 18px auto;
+    min-height: 140px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 12px 0;
+}
+
+.project-media img,
+.project-media video,
+.project-media iframe {
+    width: 100%;
+    max-width: 140px; /* hoặc 320px cho video */
+    aspect-ratio: 4/3; /* hoặc 16/9 cho video */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.project-media img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.22s cubic-bezier(.4,0,.2,1), box-shadow 0.18s;
+}
+.project-media img:hover {
+    transform: scale(1.18);
+    z-index: 2;
+    box-shadow: 0 6px 24px rgba(255,94,98,0.18), 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.project-media iframe,
+.project-media video {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: #000;
+}
+
+/* Đảm bảo khung ảnh/video luôn cùng chiều cao */
+.media-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+    /* Đặt chiều cao tối thiểu cho khung ảnh+caption */
+    min-width: 0;
+}
+
+.media-item img,
+.media-item iframe {
+    width: 100%;
+    max-width: 140px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    /* Đặt chiều cao cố định cho ảnh/video */
+    height: 105px;
+    background: #f5f5f5;
+    display: block;
+}
+
+.media-caption {
+    color: #888;
+    font-size: 0.97em;
+    margin-top: 4px;
+    text-align: center;
+    max-width: 95%;
+    word-break: break-word;
+    min-height: 2.2em;
+    max-height: 2.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Nút quay lại */
+.button {
+    display: block;
+    margin: 16px auto 0 auto;
+    padding: 8px 28px;
+    background: linear-gradient(90deg, #ffb347 0%, #ff5e62 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255,94,98,0.08);
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.15s;
+    outline: none;
+}
+
+.button:hover, .button:focus {
+    background: linear-gradient(90deg, #ff5e62 0%, #ffb347 100%);
+    box-shadow: 0 4px 16px rgba(255,94,98,0.15);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* Danh sách quy trình */
+.process-list {
+    margin: 18px 0 0 0;
+    padding-left: 20px;
+    color: #444;
+}
+.process-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Responsive cho project */
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        margin: 10px 1vw;
+        padding: 8px;
+        font-size: 0.98em;
+    }
+    .project-media img,
+    .project-media video,
+    .project-media iframe {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* Hiệu ứng nền động cho trang project */
+.gradient-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, #ffb347, #8fd3f4, #ff5e62); /* Thêm dòng này */
+}
+.gradients-container {
+    width: 100vw;
+    height: 100vh;
+    filter: url(#goo);
+    position: absolute;
+    inset: 0;
+}
+body > *:not(.gradient-bg) {
+    position: relative;
+    z-index: 1;
+}
+.g1, .g2, .g3, .g4, .g5, .interactive {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    mix-blend-mode: lighten;
+    animation: morph 12s infinite alternate;
+}
+.g1 { width: 40vw; height: 40vw; left: 5vw; top: 10vh; background: #ffb347; animation-delay: 0s; }
+.g2 { width: 35vw; height: 35vw; right: 10vw; top: 5vh; background: #ff5e62; animation-delay: 2s; }
+.g3 { width: 30vw; height: 30vw; left: 20vw; bottom: 5vh; background: #8fd3f4; animation-delay: 4s; }
+.g4 { width: 25vw; height: 25vw; right: 20vw; bottom: 10vh; background: #ffcc33; animation-delay: 6s; }
+.g5 { width: 20vw; height: 20vw; left: 40vw; top: 40vh; background: #ff9966; animation-delay: 8s; }
+
+.interactive {
+    position: absolute;
+    width: 18vw;
+    height: 18vw;
+    left: 0;
+    top: 0;
+    background: #07ffff;
+    opacity: 0.7;
+    border-radius: 50%;
+    mix-blend-mode: lighten;
+    box-shadow: 0 0 40px 20px #1bf33888, 0 0 0 8px #fff2;
+    transition: background 0.3s, box-shadow 0.3s;
+    z-index: 2;
+    pointer-events: none;
+    animation: morph 12s infinite alternate;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hiệu ứng sóng nước nhỏ hơn và nhiều đợt sóng nối tiếp */
+.bubble-ripple,
+.bubble-ripple.r2,
+.bubble-ripple.r3 {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    border: 2px solid #1bf33888;
+    opacity: 0.5;
+    z-index: 1;
+    box-sizing: border-box;
+    animation: ripple-wave 0.8s infinite;
+}
+
+.bubble-ripple.r2 {
+    animation-delay: 0.25s;
+    opacity: 0.35;
+}
+
+.bubble-ripple.r3 {
+    animation-delay: 0.5s;
+    opacity: 0.22;
+}
+
+@keyframes morph {
+    0% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+    100% { border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%; }
+}
+
+@keyframes ripple-wave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.15;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.gradient-bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: background 0.8s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Chỉ áp dụng cho phần video */
+#project-videos.project-media {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    min-height: 320px;
+    padding: 18px 0;
+}
+
+/* Video to hơn, chiếm nửa khung */
+#project-videos .media-item {
+    width: 100%;
+    max-width: 420px;
+}
+
+#project-videos .media-item iframe {
+    width: 100%;
+    min-width: 220px;
+    max-width: 420px;
+    aspect-ratio: 16/9;
+    height: 236px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    background: #000;
+    display: block;
+}
+
+@media (max-width: 800px) {
+    #project-videos.project-media {
+        grid-template-columns: 1fr;
+        max-width: 100vw;
+    }
+    #project-videos .media-item iframe {
+        max-width: 100vw;
+        height: auto;
+    }
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
